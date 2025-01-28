@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>ตัวอย่างที่ 16</title>
+    <style>
+        .slideshow { text-align: center; }
+        .slideshow img { max-width: 400px; height: 300px; margin: 10px; }
+    </style>
+</head>
+<body>
+    <h3>สไลด์โชว์รูปภาพ</h3>
+    <div class="slideshow">
+        <div>
+            <img id="slideImage" src="https://cdn.wheel-size.com/automobile/body/rolls-royce-phantom-2017-2024-1693291505.955325.jpg" alt="slideshow" />
+        </div>
+        <button onclick="changeSlide(-1)">ก่อนหน้า</button>
+        <button onclick="changeSlide(1)">ถัดไป</button>
+    </div>
+<script>
+    const images = [
+        "https://mediapool.bmwgroup.com/cache/P9/202404/P90547854/P90547854-ghost-extended-expressionism-599px.jpg",
+        "https://www.mansory.com/sites/default/files/styles/1920x800_fullwidth_car_slider/public/migrated/cars/Cars/rolls-royce/wraith/mansory_rolls_royce_wraith_25.jpg?itok=f5CcTOPO",
+        "https://i.insider.com/64bad4c203c40c001a9840af?width=1200&format=jpeg"
+    ];
+    let currentSlide = 0;
+    function changeSlide(direction) {
+        currentSlide = (currentSlide + direction + images.length) % images.length;
+        document.getElementById("slideImage").src = images[currentSlide];
+    }
+</script>
+</body>
+</html>
