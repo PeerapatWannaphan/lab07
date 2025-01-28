@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>ตัวอย่างที่ 14</title>
+    <style>
+        .clock { font-size: 2em; font-family: monospace; padding: 10px; border: 2px solid #333; display: inline-block; }
+    </style>
+</head>
+<body>
+    <h3>นาฬิกาดิจิตอล</h3>
+    <div id="clock" class="clock"></div>
+<script>
+    function updateClock() {
+        const now = new Date();
+        const time = now.toLocaleTimeString();
+        document.getElementById("clock").textContent = time;
+    }
+    setInterval(updateClock, 1000);
+    updateClock();
+</script>
+</body>
+</html>
